@@ -2,7 +2,7 @@ proceeds = int(input('Введите выручку Вашей фирмы'))
 costs = int(input('Введите издержки Вашей фирмы'))
 if proceeds < costs:
     print('Ваша фирма работает в убыток')
-elif proceeds > costs:
+else:
     profit = proceeds - costs
     # ввел новую переменную, которая обозначает сумму прибыли
     print(f'Ваша фирма работает в прибыль, которая составялет {profit} рублей')
