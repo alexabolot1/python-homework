@@ -17,10 +17,13 @@ while True:
         list_one.append(a)
 print(list_one)
 while True:
-    list_two.append(list_one[item_number + 1])
-    list_two.append(list_one[item_number])
-    item_number += 2
-    if item_number >= len(list_one) - 1:
+    if len(list_one) != 1:
+        list_two.append(list_one[item_number + 1])
+        list_two.append(list_one[item_number])
+        item_number += 2
+        if item_number >= len(list_one) - 1:
+            break
+    else:
         break
 if len(list_one) % 2 != 0:
     list_two.append(list_one[-1])

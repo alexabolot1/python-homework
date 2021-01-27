@@ -20,7 +20,7 @@ val = []
 while len(products) != a:
     for i in keys:
         val.append(input(f'Введите {i} товара '))
-    dict_one = {keys[0]: val[0], keys[1]: val[1], keys[2]: val[2], keys[3]: val[3]}
+    dict_one = dict(zip(keys, val))
     products.append(dict_one)
     val.clear()
 for i in enumerate(products, 1):

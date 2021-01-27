@@ -5,6 +5,4 @@
 
 words = input('Введите несколько слов, разделённых пробелами ').split()
 for ind, el in enumerate(words, 1):
-    if len(el) > 10:
-        el = el[0:10]
-    print(ind, ")", el)
+    print(ind, ")", el[:10])
