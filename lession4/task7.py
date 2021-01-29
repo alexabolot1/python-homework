@@ -15,8 +15,14 @@ def generator(arg):
         yield factorial(fact)
 
 
-my_list = [randint(5, 15) for i in range(1, 10)]
-print(my_list)
+my_list = {randint(5, 50) for i in range(5)}
+# для начала создал множество, чтобы все элементы были уникальны
+my_list = list(my_list)
+print(f'Список чисел для которых нужно найти факториал: {my_list}')
 
-for i in generator(my_list):
-    print(i)
+c = 0
+if c != len(my_list):
+    for i in generator(my_list):
+        print(f'Факториал числа {my_list[c]} равен {i}')
+        c += 1
+# переменную-счетчик и условный оператор я использовал для возможности красивого вывода факториала
