@@ -9,7 +9,7 @@
 
 
 def int_func(arg1):
-    arg1 = str(arg1.title())
+    arg1 = arg1.title()
     return arg1
 
 

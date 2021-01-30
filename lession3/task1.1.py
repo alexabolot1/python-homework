@@ -6,12 +6,10 @@
 
 def my_func(a, b):
     if b != 0:
-        if a / b % 2 != 0:
+        if a % b != 0:
             return round(a / b, 2)
         else:
             return a // b
-    else:
-        return
 
 
 def my_func_one():
