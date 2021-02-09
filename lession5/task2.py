@@ -8,3 +8,4 @@ for lin, content in enumerate(f_obj.readlines(), 1):
     lines = lin
     print(f'В строке под номером {lin} находятся слова в количестве {len(content.split())}.')
 print(f'Строк в вашем файле - {lines}.')
+f_obj.close()
