@@ -46,7 +46,7 @@ class Cell:
 
     def __truediv__(self, other):
         if other.numb != 0:
-            return str(f'Результат деления клеток: {self.numb / other.numb}')
+            return str(f'Результат деления клеток: {round(self.numb / other.numb, 2)}')
         else:
             return 'Деление клеток невозможно'
 
@@ -58,5 +58,6 @@ cell_1 = Cell(50)
 cell_2 = Cell(64)
 print(cell_1 - cell_2)
 print(cell_1 * cell_2)
+print(cell_1 / cell_2)
 print()
 print(cell_2.make_order(10))
