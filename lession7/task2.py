@@ -21,10 +21,6 @@ class Clothes(ABC):
     def calc(self):
         pass
 
-    def __add__(self, other):
-        self.other = other
-        return self.inp + self.other
-
 
 class Costume(Clothes):
     def calc(self):
