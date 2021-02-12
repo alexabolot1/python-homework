@@ -11,7 +11,7 @@
 
 
 class Car:
-    def __init__(self, speed, color, name, is_police):
+    def __init__(self, speed, color, name, is_police=False):
         self.speed = speed
         self.color = color
         self.name = name
@@ -55,9 +55,9 @@ class PoliceCar(Car):
     pass
 
 
-town_car = TownCar(62, 'красня', 'Lada Priora', False)
-work_car = WorkCar(39, 'чёрная', 'Renault Sandero', False)
-sport_car = SportCar(160, 'хаки', 'Ferrari', False)
+town_car = TownCar(62, 'красня', 'Lada Priora')
+work_car = WorkCar(39, 'чёрная', 'Renault Sandero')
+sport_car = SportCar(160, 'хаки', 'Ferrari')
 police_car = PoliceCar(90, 'синяя', 'Patriot', True)
 
 town_car.show_speed()
@@ -65,4 +65,5 @@ work_car.show_speed()
 sport_car.go()
 sport_car.turn('налево')
 sport_car.stop()
+print(sport_car.is_police)
 print(police_car.is_police)
