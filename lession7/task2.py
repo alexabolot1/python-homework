@@ -21,18 +21,23 @@ class Clothes(ABC):
     def calc(self):
         pass
 
+    @property
+    def size(self):
+        return self.calc()
+
 
 class Costume(Clothes):
     def calc(self):
-        return print(f'Расход ткани на Ваш костюм с учтом размера составит: {round(2 * self.inp + 0.3, 2)}')
+        return f'Расход ткани на Ваш костюм с учтом размера составит: {round(2 * self.inp + 0.3, 2)}'
 
 
 class Coat(Clothes):
     def calc(self):
-        return print(f'Расход ткани на Ваш пальто с учётом размера составит: {round(self.inp / 6.5 + 0.5, 2)}')
+        return f'Расход ткани на Ваш пальто с учётом размера составит: {round(self.inp / 6.5 + 0.5, 2)}'
 
 
 coat = Coat(56)
 costume = Costume(15)
-coat.calc()
-costume.calc()
+clothes_lst = [coat, costume]
+for i in clothes_lst:
+    print(i.size)

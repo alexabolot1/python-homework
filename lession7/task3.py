@@ -33,31 +33,29 @@ class Cell:
         return str(self.numb)
 
     def __add__(self, other):
-        return str(f'Результат сложения клеток: {self.numb + other.numb}')
+        return Cell(str(f'Результат сложения клеток: {self.numb + other.numb}'))
 
     def __sub__(self, other):
         if self.numb > other.numb:
-            return str(f'Результат вычитания клеток: {self.numb - other.numb}')
+            return Cell(str(f'Результат вычитания клеток: {self.numb - other.numb}'))
         else:
-            return 'Вычитание невозможно'
+            return Cell('Вычитание невозможно')
 
     def __mul__(self, other):
-        return str(f'Результат умножения клеток: {self.numb * other.numb}')
+        return Cell(str(f'Результат умножения клеток: {self.numb * other.numb}'))
 
     def __truediv__(self, other):
         if other.numb != 0:
-            return str(f'Результат деления клеток: {round(self.numb / other.numb, 2)}')
+            return Cell(str(f'Результат деления клеток: {round(self.numb / other.numb, 2)}'))
         else:
-            return 'Деление клеток невозможно'
+            return Cell('Деление клеток невозможно')
 
     def make_order(self, quantity):
         return '\n'.join(['*' * quantity for _ in (range(self.numb // quantity))]) + '\n' + '*' * (self.numb % quantity)
 
 
 cell_1 = Cell(50)
-cell_2 = Cell(64)
-print(cell_1 - cell_2)
-print(cell_1 * cell_2)
-print(cell_1 / cell_2)
-print()
-print(cell_2.make_order(10))
+cell_2 = Cell(12)
+cell_3 = cell_1 * cell_2
+print(cell_2.make_order(5))
+

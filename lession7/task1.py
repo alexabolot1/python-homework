@@ -22,20 +22,20 @@ class Matrix:
         return '\n'.join([' '.join(str(numb) for numb in lst) for lst in self.lst])
 
     def __add__(self, other):
-        matrix_str = ''
+        sum_matrix = []
         if len(self.lst) == len(other.lst):
             for ls1, ls2 in zip(self.lst, other.lst):
                 if len(ls1) != len(ls2):
                     return 'Матриицы невозможно сложить'
-                matrix_list = [a + b for a, b in zip(ls1, ls2)]
-                matrix_str += ' '.join([str(i) for i in matrix_list]) + '\n'
+                sum_matrix.append([a + b for a, b in zip(ls1, ls2)])
+
         else:
             return 'Матриицы невозможно сложить'
-        return matrix_str
+        return Matrix(sum_matrix)
 
 
-matrix_one = Matrix([[2, 4], [9, 12], [21, 55]])
-matrix_two = Matrix([[64, 21], [11, 95], [2, 18]])
+matrix_one = Matrix([[2, 4, 5], [9, 12, 7], [21, 55, 8]])
+matrix_two = Matrix([[64, 21, 5], [11, 95, 13], [2, 18, 20]])
 print(f'Первая матрица:\n{matrix_one}')
 print()
 print(f'Вторая матрица:\n{matrix_two}')
