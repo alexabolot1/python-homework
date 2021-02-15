@@ -58,4 +58,3 @@ cell_1 = Cell(50)
 cell_2 = Cell(12)
 cell_3 = cell_1 * cell_2
 print(cell_2.make_order(5))
-
