@@ -18,12 +18,13 @@
 
 
 class OfficeEquipment:
+    storage = []
+
     def __init__(self, name, color, inv_numb, price):
         self.name = name
         self.color = color
         self.inv_numb = inv_numb
         self.price = price
-        self.storage = []
 
     def __str__(self):
         return f'Товар {self.name}.\nЦвет: {self.color}.\nИнвентарный номер: {self.inv_numb}.\nЦена: {self.price}'
@@ -34,8 +35,8 @@ class OfficeEquipment:
             product_dict = {'Название товара': self.name,
                             'Цена товара': self.price,
                             'Количество единиц товара': product_quantity}
-            self.storage.append(product_dict)
-            print(f'Теперь на складе: {self.storage}')
+            OfficeEquipment.storage.append(product_dict)
+            print(f'У вас на складе: {OfficeEquipment.storage}')
             # никак не могу понять, что должен вернуть метод, чтобы self.storage не перезаписывался,
             # а добавлял новые словари
         except ValueError:
